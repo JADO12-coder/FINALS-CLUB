@@ -58,7 +58,7 @@ function connectGoogleCalendar(){
    googleAccessToken=resp.access_token;googleExpiresAt=Date.now()+(Number(resp.expires_in||3600)*1000)-30000;
    await loadGoogleEvents();
  },error_callback:e=>{if(e.type!=='popup_closed')showGoogleError('La fenêtre de connexion Google a été fermée ou bloquée.')}})}
- googleTokenClient.requestAccessToken({prompt:'consent'});
+googleTokenClient.requestAccessToken({prompt:''});
 }
 
 function clone(o){return JSON.parse(JSON.stringify(o))}
